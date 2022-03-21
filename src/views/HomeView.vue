@@ -12,8 +12,37 @@
   </div>
 </template>
 
-<!-- options api pattern-->
+2 types of reactive data
+refs : simple single items of data, eg a string, an array, a number
+reactive objects : object of data with related data properties
+
+<!--composition api setup function pattern-->
 <script>
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const counter = ref(0)
+
+    const increaseCounter = () => {
+      counter.value++
+    }
+
+    const decreaseCounter = () => {
+      counter.value--
+    }
+
+    return {
+      counter,
+      increaseCounter,
+      decreaseCounter
+    }
+  }
+}
+</script>
+
+<!-- options api pattern-->
+<!--<script>
 export default {
   data() {
     return {
@@ -29,4 +58,4 @@ export default {
     }
   }
 }
-</script>
+</script>-->
