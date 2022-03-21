@@ -16,9 +16,26 @@
 refs : simple single items of data, eg a string, an array, a number
 reactive objects : object of data with related data properties
 
+don't need export default, setup() nor return statement
+<!--composition api script setup pattern-->
+<script setup>
+import {ref} from "vue"
+
+const counter = ref(0)
+
+const increaseCounter = () => {
+  counter.value++
+}
+
+const decreaseCounter = () => {
+  counter.value--
+}
+
+</script>
+
 <!--composition api setup function pattern-->
-<script>
-import { ref } from "vue";
+<!--<script>
+import { ref } from "vue"
 
 export default {
   setup() {
@@ -39,7 +56,7 @@ export default {
     }
   }
 }
-</script>
+</script>-->
 
 <!-- options api pattern-->
 <!--<script>
